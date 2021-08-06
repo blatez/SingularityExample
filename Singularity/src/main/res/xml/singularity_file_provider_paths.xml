@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+
+    <!--Environment#getRootDirectory()-->
+    <root-path
+        name="root-path"
+        path="" />
+
+    <!--Context#getFileDir()-->
+    <files-path
+        name="files-path"
+        path="." />
+
+    <!--Context#getChaceDir()-->
+    <cache-path
+        name="cache-path"
+        path="." />
+
+    <external-path
+        name="external_storage_root"
+        path="." />
+
+    <!--Context#getExternalFileDir(null)-->
+    <external-files-path
+        name="external_file_path"
+        path="." />
+
+    <!--Context#getExternalCacheDir()-->
+    <external-cache-path
+        name="external_cache_path"
+        path="." />
+
+    <!--Context#getExternalFileDir(String)
+        android.os.Environment#DIRECTORY_MUSIC,
+        android.os.Environment#DIRECTORY_PODCASTS,
+        android.os.Environment#DIRECTORY_RINGTONES,
+        android.os.Environment#DIRECTORY_ALARMS,
+        android.os.Environment#DIRECTORY_NOTIFICATIONS,
+        android.os.Environment#DIRECTORY_PICTURES,
+        android.os.Environment#DIRECTORY_MOVIES-->
+    <external-media-path
+        name="external-media-path"
+        path="." />
+
+</paths>
