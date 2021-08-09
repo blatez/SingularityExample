@@ -1,11 +1,9 @@
 package com.blate.singularity.storage;
 
 import android.content.Context;
-import android.os.Environment;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
-
-import com.blate.singularity.log.Logg;
 
 import java.io.File;
 
@@ -77,7 +75,7 @@ public class StorageMan {
      */
     public void setInternalVolatileCacheDir(@NonNull File internalVolatileCacheDir) {
         if (mLatchInternalVolatileCacheDir) {
-            Logg.w(TAG, String.format("[InternalVolatileCacheDir] has been used; set value[%s]fail; the current using value [%s]",
+            Log.w(TAG, String.format("[InternalVolatileCacheDir] has been used; set value[%s]fail; the current using value [%s]",
                     internalVolatileCacheDir.getPath(), mInternalVolatileCacheDir.getPath()));
             return;
         }
@@ -107,7 +105,7 @@ public class StorageMan {
      */
     public void setExternalVolatileCacheDir(@NonNull File externalVolatileCAcheDir) {
         if (mLatchExternalVolatileCacheDir) {
-            Logg.w(TAG, String.format("[InternalVolatileCacheDir] has been used; set value[%s]fail; the current using value [%s]",
+            Log.w(TAG, String.format("[InternalVolatileCacheDir] has been used; set value[%s]fail; the current using value [%s]",
                     externalVolatileCAcheDir.getPath(), mExternalVolatileCacheDir.getPath()));
             return;
         }

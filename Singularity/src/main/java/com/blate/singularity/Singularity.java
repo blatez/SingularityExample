@@ -1,6 +1,6 @@
 package com.blate.singularity;
 
-import com.blate.singularity.log.Logg;
+import android.util.Log;
 
 public class Singularity {
 
@@ -36,7 +36,7 @@ public class Singularity {
 
     public static void setDebugForcibly(boolean debugForcibly) {
         if (sLatchDebugForcibly) {
-            Logg.w(TAG, String.format("[DebugForcibly] set multiple times; set value[%s]fail; the current using value [%s]",
+            Log.w(TAG, String.format("[DebugForcibly] set multiple times; set value[%s]fail; the current using value [%s]",
                     debugForcibly, sDebugForcibly));
             return;
         }
