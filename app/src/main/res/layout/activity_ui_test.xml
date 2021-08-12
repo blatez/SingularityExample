@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/bt_ui_test"
+        android:id="@+id/bt_recycler_view_item_decoration_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/safeSpace"
         android:layout_marginEnd="@dimen/safeSpace"
-        android:text="UI Test" />
+        android:text="RecyclerView item decoration test" />
+
 
 </LinearLayout>

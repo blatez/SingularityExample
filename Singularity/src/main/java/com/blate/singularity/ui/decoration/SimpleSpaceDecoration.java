@@ -96,11 +96,11 @@ public class SimpleSpaceDecoration
                                           @NonNull RecyclerView parent) {
         int position = parent.getChildLayoutPosition(view);
         boolean isEnd = (adapter.getItemCount() + layoutManager.getSpanCount() - 1) / layoutManager.getSpanCount()
-                == (position + layoutManager.getSpanCount() - 1) / layoutManager.getSpanCount();
+                == (position + 1 + layoutManager.getSpanCount() - 1) / layoutManager.getSpanCount();
 
         //交叉轴的序号
         int crossIndex = position % layoutManager.getSpanCount();
-        if (layoutManager.getLayoutDirection() == RecyclerView.HORIZONTAL) {
+        if (layoutManager.getOrientation() == RecyclerView.HORIZONTAL) {
             if (position < layoutManager.getSpanCount()) {
                 //主轴首列
                 outRect.left = layoutManager.getReverseLayout() ? mMainAxisSpace / 2 : mStartSpace;
@@ -115,7 +115,7 @@ public class SimpleSpaceDecoration
             }
             outRect.top = crossIndex * mCrossAxisSpace - crossIndex * (mCrossAxisSpace * (layoutManager.getSpanCount() - 1) / layoutManager.getSpanCount());
             outRect.bottom = (crossIndex + 1) * (mCrossAxisSpace * (layoutManager.getSpanCount() - 1) / layoutManager.getSpanCount()) - crossIndex * mCrossAxisSpace;
-        } else if (layoutManager.getLayoutDirection() == RecyclerView.VERTICAL) {
+        } else if (layoutManager.getOrientation() == RecyclerView.VERTICAL) {
             if (position < layoutManager.getSpanCount()) {
                 //主轴首行
                 outRect.top = layoutManager.getReverseLayout() ? mMainAxisSpace / 2 : mStartSpace;
@@ -140,7 +140,7 @@ public class SimpleSpaceDecoration
                                             @NonNull Rect outRect,
                                             @NonNull View view,
                                             @NonNull RecyclerView parent) {
-        if (layoutManager.getLayoutDirection() == RecyclerView.HORIZONTAL) {
+        if (layoutManager.getOrientation() == RecyclerView.HORIZONTAL) {
             if (parent.getChildLayoutPosition(view) == 0) {
                 outRect.left = layoutManager.getReverseLayout() ? mMainAxisSpace / 2 : mStartSpace;
                 outRect.right = layoutManager.getReverseLayout() ? mStartSpace : mMainAxisSpace / 2;
@@ -151,7 +151,7 @@ public class SimpleSpaceDecoration
                 outRect.left = mMainAxisSpace / 2;
                 outRect.right = mMainAxisSpace / 2;
             }
-        } else if (layoutManager.getLayoutDirection() == RecyclerView.VERTICAL) {
+        } else if (layoutManager.getOrientation() == RecyclerView.VERTICAL) {
             if (parent.getChildLayoutPosition(view) == 0) {
                 outRect.top = layoutManager.getReverseLayout() ? mMainAxisSpace / 2 : mStartSpace;
                 outRect.bottom = layoutManager.getReverseLayout() ? mStartSpace : mMainAxisSpace / 2;
