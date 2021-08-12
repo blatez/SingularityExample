@@ -58,18 +58,36 @@ public class SimpleSpaceDecoration
     @Px
     private final int mEndSpace;
 
+    /**
+     * @param between 条目之间的间距
+     */
     public SimpleSpaceDecoration(@Px int between) {
         this(0, 0, between, between);
     }
 
+    /**
+     * @param extremity 主轴两端的间距
+     * @param between   条目之间的间距
+     */
     public SimpleSpaceDecoration(@Px int extremity, @Px int between) {
         this(extremity, extremity, between, between);
     }
 
+    /**
+     * @param startSpace 主轴开始的间距
+     * @param endSpace   主轴结束的间距
+     * @param between    条目之间的间距
+     */
     public SimpleSpaceDecoration(@Px int startSpace, @Px int endSpace, @Px int between) {
         this(startSpace, endSpace, between, between);
     }
 
+    /**
+     * @param startSpace     主轴开始的间距
+     * @param endSpace       主轴结束的间距
+     * @param mainAxisSpace  条目在主轴方向的间距
+     * @param crossAxisSpace 条目在交叉轴方向上的间距
+     */
     public SimpleSpaceDecoration(@Px int startSpace, @Px int endSpace, @Px int mainAxisSpace, @Px int crossAxisSpace) {
         this.mStartSpace = startSpace;
         this.mEndSpace = endSpace;
