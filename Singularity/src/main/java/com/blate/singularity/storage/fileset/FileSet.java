@@ -1,5 +1,7 @@
 package com.blate.singularity.storage.fileset;
 
+import androidx.annotation.WorkerThread;
+
 import com.blate.singularity.storage.StorageTools;
 import com.blate.singularity.thread.ThreadManager;
 
@@ -37,16 +39,11 @@ public class FileSet {
         }
     }
 
+    @WorkerThread
     public void deleteFiles() {
-        ThreadManager.getInstance().getIoExecutor()
-                .execute(new Runnable() {
-                    @Override
-                    public void run() {
-                        for (File file : mFiles) {
-                            StorageTools.deleteFileOrDirectory(file);
-                        }
-                    }
-                });
+        for (File file : mFiles) {
+            StorageTools.deleteFileOrDirectory(file);
+        }
     }
 
 }
