@@ -83,7 +83,7 @@ public class MediaTools {
     }
 
     /**
-     * 保存一个图片流到系统相册
+     * 保存一个位图到系统相册
      *
      * @param context     context
      * @param bitmap      位图
@@ -172,7 +172,7 @@ public class MediaTools {
      * @return 保存文件的uri, 这个uri没有针对外部包授权.如果保存失败返回null
      */
     @WorkerThread
-    public static Uri saveImageToPicture(@NonNull Context context,
+    public static Uri saveImageToPictureDir(@NonNull Context context,
                                          @NonNull Bitmap bitmap,
                                          @Nullable String fileName) {
         OutputStream outputStream = null;

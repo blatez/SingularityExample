@@ -107,6 +107,15 @@ public class SimpleSpaceDecoration
         }
     }
 
+    /**
+     * 网格布局条目的边距设置
+     *
+     * @param layoutManager layoutManager
+     * @param adapter       adapter
+     * @param outRect       outRect
+     * @param view          view
+     * @param parent        parent,
+     */
     private void getGridLayoutITemOffsets(@NonNull GridLayoutManager layoutManager,
                                           @NonNull RecyclerView.Adapter<?> adapter,
                                           @NonNull Rect outRect,
@@ -153,6 +162,15 @@ public class SimpleSpaceDecoration
         }
     }
 
+    /**
+     * 线性布局条目的边距设置
+     *
+     * @param layoutManager layoutManager
+     * @param adapter       adapter
+     * @param outRect       outRect
+     * @param view          view
+     * @param parent        parent,
+     */
     private void getLinearLayoutItemOffsets(@NonNull LinearLayoutManager layoutManager,
                                             @NonNull RecyclerView.Adapter<?> adapter,
                                             @NonNull Rect outRect,
