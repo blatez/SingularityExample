@@ -86,7 +86,7 @@ public class StorageTools {
     public static Uri getUriFromFile(@NonNull Context context, @NonNull File file) {
         return SingularityFileProvider.getUriForFile(
                 context,
-                String.format("%s..singularity.file.provider", context.getPackageName()), file);
+                String.format("%s.singularity.file.provider", context.getPackageName()), file);
     }
 
     /**

@@ -65,6 +65,7 @@ public class MediaTools {
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 pair.first.put(MediaStore.MediaColumns.IS_PENDING, false);
+                context.getContentResolver().update(pair.second, pair.first, null);
             }
             return pair.second;
         } catch (IOException e) {
@@ -107,6 +108,7 @@ public class MediaTools {
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 pair.first.put(MediaStore.MediaColumns.IS_PENDING, false);
+                context.getContentResolver().update(pair.second, pair.first, null);
             }
             return pair.second;
         } catch (IOException e) {
@@ -173,8 +175,8 @@ public class MediaTools {
      */
     @WorkerThread
     public static Uri saveImageToPictureDir(@NonNull Context context,
-                                         @NonNull Bitmap bitmap,
-                                         @Nullable String fileName) {
+                                            @NonNull Bitmap bitmap,
+                                            @Nullable String fileName) {
         OutputStream outputStream = null;
         try {
             Uri uri = createPictureFileUri(context, fileName);
@@ -222,7 +224,7 @@ public class MediaTools {
      * contentValues.put(MediaStore.MediaColumns.IS_PENDING, false);
      *
      * @param context     context
-     * @param path        保存路径,可以为空.Android Q以下设置无效
+     * @param path        保存路径,可以为空.Android Q以下设置无效,缺省路径
      * @param displayName 显示名字,可以为空
      * @return Pair中的uri没有针对外部包授权
      */
