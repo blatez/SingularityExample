@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,13 +56,13 @@ public class UiTestActivity
 
             ActivityMainBinding binding = ActivityMainBinding.inflate(LayoutInflater.from(this));
 
-            Bitmap bitmap = ViewPainter.saveViewSnapshot(binding.getRoot());
+            Bitmap bitmap = ViewPainter.saveViewSnapshot(binding.getRoot(), ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
 
             Uri uri = MediaTools.saveImageToAlbum(
                     this,
                     bitmap,
                     null,
-                    String.format("%s.jpg",System.currentTimeMillis()));
+                    String.format("%s.jpg", System.currentTimeMillis()));
 
             if (uri != null) {
                 MediaTools.refreshAlbum(this, uri);

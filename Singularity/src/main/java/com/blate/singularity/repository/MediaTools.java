@@ -42,7 +42,8 @@ public class MediaTools {
      *
      * @param context     context
      * @param inputStream 图片流
-     * @param path        保存路径,可以为空
+     * @param path        保存路径,可以为空.这个设置在Android Q以下无效,系统会自动寻找存放位置
+     *                    {@link #createAlbumFileUri(Context, String, String)}
      * @param displayName 显示名字,可以为空
      * @return 保存图片的uri, 这个uri没有针对外部包授权.保存失败返回null
      */
@@ -129,7 +130,7 @@ public class MediaTools {
 
     /**
      * 保存一个图片流到@link Context#getExternalFilesDir(String)}参数{@link Environment#DIRECTORY_PICTURES}
-     * 文件夹下
+     * 文件夹下,这个位置保存的图片一般情况不会再系统相册显示
      *
      * @param context     context
      * @param inputStream 图片输入流
@@ -166,7 +167,7 @@ public class MediaTools {
 
     /**
      * 保存一个位图到@link Context#getExternalFilesDir(String)}参数{@link Environment#DIRECTORY_PICTURES}
-     * 文件夹下
+     * 文件夹下,这个位置保存的图片一般情况不会再系统相册显示
      *
      * @param context  context context
      * @param bitmap   位图
@@ -225,6 +226,10 @@ public class MediaTools {
      *
      * @param context     context
      * @param path        保存路径,可以为空.Android Q以下设置无效,缺省路径
+     *                    ex :  Environment.DIRECTORY_PICTURES + File.separator + [folderName]
+     *                    如果需要指定存放位置的兼容方案,请在Build.VERSION.SDK_INT < Build.VERSION_CODES.Q
+     *                    时使用Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)
+     *                    之类的API
      * @param displayName 显示名字,可以为空
      * @return Pair中的uri没有针对外部包授权
      */

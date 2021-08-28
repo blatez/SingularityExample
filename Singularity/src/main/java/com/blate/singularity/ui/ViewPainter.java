@@ -14,6 +14,7 @@ public class ViewPainter {
      * 保存View的快照
      * 如果View包含布局参数,使用View的布局参数进行布局保存
      * 如果View不包含布局参数,缺省值是{@link android.view.ViewGroup.LayoutParams#WRAP_CONTENT}
+     * 这不适用于 AdapterView
      *
      * @param view view
      * @return snapshot
@@ -30,6 +31,7 @@ public class ViewPainter {
     /**
      * 保存View的快照
      * 按照给定的尺寸布局
+     * 这不适用于 AdapterView
      *
      * @param view   view
      * @param width  宽度
@@ -77,6 +79,7 @@ public class ViewPainter {
      * 保存View快照
      * 使用给定的测量规格保存.
      * 测量规格不是尺寸,包括了测量模式和尺寸.如果想按照尺寸保存,调用{@link #saveViewSnapshot(View, int, int)}
+     * 这不适用于 AdapterView
      *
      * @param view              view
      * @param widthMeasureSpec  宽度测量规格
